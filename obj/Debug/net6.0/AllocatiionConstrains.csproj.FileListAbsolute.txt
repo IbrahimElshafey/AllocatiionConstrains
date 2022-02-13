@@ -1,0 +1,4 @@
+C:\Users\IKHALIF\Desktop\AllocatiionConstrains\obj\Debug\net6.0\AllocatiionConstrains.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\IKHALIF\Desktop\AllocatiionConstrains\obj\Debug\net6.0\AllocatiionConstrains.AssemblyInfoInputs.cache
+C:\Users\IKHALIF\Desktop\AllocatiionConstrains\obj\Debug\net6.0\AllocatiionConstrains.AssemblyInfo.cs
+C:\Users\IKHALIF\Desktop\AllocatiionConstrains\obj\Debug\net6.0\AllocatiionConstrains.csproj.CoreCompileInputs.cache
