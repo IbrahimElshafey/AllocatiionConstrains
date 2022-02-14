@@ -2,3 +2,4 @@ C:\Users\IKHALIF\Desktop\AllocatiionConstrains\obj\Debug\net6.0\AllocatiionConst
 C:\Users\IKHALIF\Desktop\AllocatiionConstrains\obj\Debug\net6.0\AllocatiionConstrains.AssemblyInfoInputs.cache
 C:\Users\IKHALIF\Desktop\AllocatiionConstrains\obj\Debug\net6.0\AllocatiionConstrains.AssemblyInfo.cs
 C:\Users\IKHALIF\Desktop\AllocatiionConstrains\obj\Debug\net6.0\AllocatiionConstrains.csproj.CoreCompileInputs.cache
+C:\Users\IKHALIF\Desktop\AllocatiionConstrains\obj\Debug\net6.0\AllocatiionConstrains.csproj.AssemblyReference.cache
