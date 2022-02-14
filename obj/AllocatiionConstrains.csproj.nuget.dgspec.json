@@ -1,23 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\IKHALIF\\Desktop\\AllocatiionConstrains\\AllocatiionConstrains.csproj": {}
+    "C:\\Projects\\AllocatiionConstrains\\AllocatiionConstrains.csproj": {}
   },
   "projects": {
-    "C:\\Users\\IKHALIF\\Desktop\\AllocatiionConstrains\\AllocatiionConstrains.csproj": {
+    "C:\\Projects\\AllocatiionConstrains\\AllocatiionConstrains.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\IKHALIF\\Desktop\\AllocatiionConstrains\\AllocatiionConstrains.csproj",
+        "projectUniqueName": "C:\\Projects\\AllocatiionConstrains\\AllocatiionConstrains.csproj",
         "projectName": "AllocatiionConstrains",
-        "projectPath": "C:\\Users\\IKHALIF\\Desktop\\AllocatiionConstrains\\AllocatiionConstrains.csproj",
-        "packagesPath": "C:\\Users\\IKHALIF\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\IKHALIF\\Desktop\\AllocatiionConstrains\\obj\\",
+        "projectPath": "C:\\Projects\\AllocatiionConstrains\\AllocatiionConstrains.csproj",
+        "packagesPath": "C:\\Users\\Ibrahim\\.nuget\\packages\\",
+        "outputPath": "C:\\Projects\\AllocatiionConstrains\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\IKHALIF\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Ibrahim\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -26,7 +27,9 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "http://nuget.syncfusion.com/nuget_xamarin/nuget/getsyncfusionpackages/xamarin/": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nugetized.blob.core.windows.net/live-reload/index.json": {}
         },
         "frameworks": {
           "net6.0": {
@@ -43,12 +46,6 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "dependencies": {
-            "Newtonsoft.Json": {
-              "target": "Package",
-              "version": "[13.0.1, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
@@ -59,12 +56,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200-preview.20601.7\\RuntimeIdentifierGraph.json"
         }
       }
     }
