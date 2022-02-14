@@ -35,7 +35,7 @@ namespace AllocationConstraints.JobShop
              *  - if there are conflicts, solve it by moving the [least difficult] to left
              */
 
-            var data = Newtonsoft.Json.JsonConvert.DeserializeObject<JobShopData>(File.ReadAllText(@"..\..\..\..\JobShop.json"));
+            var data = Newtonsoft.Json.JsonConvert.DeserializeObject<JobShopData>(File.ReadAllText(@"~\..\..\..\..\data\JobShop.json"));
             var machines = Machine.GetNewMachines(data.MachinesCount);
             var jobs = data.Jobs;
             for (int i = 0; i < jobs.Length; i++)
