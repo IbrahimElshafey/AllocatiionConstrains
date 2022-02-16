@@ -10,9 +10,9 @@ namespace AllocationConstraints.GenericSolution
     {
         /*
          * we have list of time slots and another of activities
-         * we need to allocate activites in the time slots but we should apply constrains while allocation
+         * we need to allocate activities in the time slots but we should apply constrains while allocation
          * each time slot has one or many tags 
-         * multiple activites can be placed in time slot
+         * multiple activities can be placed in time slot
          * each activity has one or many tags 
          * 
          * Constrain may be
@@ -21,9 +21,9 @@ namespace AllocationConstraints.GenericSolution
          * 
          * If we translate every constrain to a function that function will take (activities,time slots space) and return: 
          * - Time slots that can be used in allocation
-         * - Activites that can be allocated
+         * - Activities that can be allocated
          * 
-         * before any constrains applied the space available for any activity is (TimeSolt.Start,TimeSlot.End)
+         * before any constrains applied the space available for any activity is (TimeSlot.Start,TimeSlot.End)
          * 
          * Static constrain is a function that return the same time slots and the same activity every time it called
          * Dynamic constrain is a function that changed based on previous allocation
@@ -46,7 +46,7 @@ namespace AllocationConstraints.GenericSolution
             - Distribution Constrains
                 - Activities with tag "Subject=Math,Group=Any" locate in the same time every day for the group
                 - Activities with tag "Teacher1" spread over two days only
-                - Actities with tag "Teacher1" must be separated by one hour at least
+                - Activities with tag "Teacher1" must be separated by one hour at least
             
          */
 
@@ -85,13 +85,13 @@ namespace AllocationConstraints.GenericSolution
             - FillSlotsSpace (A6,4)
             - FillSlotsSpace (A7,4)
             - FillSlotsSpace (A8,3)
-            - IntersectionConflict(Tag:"MachineId",Value:"unique")
-                - IntersectionGroup (A1,A4) = 5
-                - IntersectionGroup (A2,A6,A7) = 10
-                - IntersectionGroup (A3,A5,A8) = 6
+            - IntersectionConflict(Tag:"MachineId",Value:"any")
+                - G1 = IntersectionGroup (A1,A4) = 5
+                - G2 = IntersectionGroup (A2,A6,A7) = 10
+                - G3 = IntersectionGroup (A3,A5,A8) = 6
 
             * For each intersection group calc total
-            * Allocate activites for the group with the largest sum
+            * Allocate activities for the group with the largest sum
 
             1-4
             3-4
@@ -102,11 +102,13 @@ namespace AllocationConstraints.GenericSolution
             7-10
 
 
-            G1 = IntersectionGroup(A1,A2,A3,A4)
-            G2 = IntersectionGroup(A1,A4,A5,A6)
-            G3 = IntersectionGroup(A4,A6,A2,A3)
-
-           For each activity find elements that conflict with it
+            G1 = NoIntersection(A1,A2,A3,A4)
+            G2 = NoIntersection(A1,A4,A5,A6)
+            G3 = NoIntersection(A4,A6,A2,A3)
+            
+            A1  A2  A3  A4
+                A5          A6
+            For each activity find elements that conflict with it
            
 
 
