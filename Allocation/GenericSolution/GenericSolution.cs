@@ -106,30 +106,10 @@ namespace AllocationConstraints.GenericSolution
             G2 = IntersectionGroup(A1,A4,A5,A6)
             G3 = IntersectionGroup(A4,A6,A2,A3)
 
-            Placing G1 (A1:1,A2:2,A3:3,A4:4)
-            Placing G2 (A1:1,A4:4,A5:2,A6:3)
-            Placing G3 (A4:4,A6:3*,A2:2,A3:3*)
-            Placing G2 (A1:1,A4:4,A5:3,A6:2)
+           For each activity find elements that conflict with it
+           
 
-            Placing G3 (A4:1,A6:2,A2:3,A3:4)
-            Placing G1 (A1:2,A2:3,A3:4,A4:1)
-            Placing G2 (A1:2,A4:1,A5:3,A6:2)
 
-            A1	A2	A3	A4	A5	A6
-            2	2	2	3	1	2
-
-            Matrix X = 4 time slots*3 Intersection group
-            #	#	#	#
-            #	#	#	#
-            #	#	#	#
-
-            A4	#	#	#
-            #	A4	#	#
-            #	#	A4	#
-
-            A4	A1	A2	A3
-            A1	A4	A6	A5
-            A2	A3	A4	A6
             
          */
     }
@@ -145,6 +125,10 @@ namespace AllocationConstraints.GenericSolution
     {
         public int Id { get; set; }
         public Dictionary<string,int> Tags { get; set; }
+
+        public HashSet<Activity> ConflictActivities { get; set; }
+
+        public bool AllocationStatus { get; set; }
     }
 
 }
