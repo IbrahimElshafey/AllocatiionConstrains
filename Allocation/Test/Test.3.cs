@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AllocationConstraints.Test
 {
-    public partial class Test
+    public partial class Test1
     {
         public static void Execute()
         {
@@ -67,7 +67,7 @@ namespace AllocationConstraints.Test
             //constrains is two types
             //after allocation constrain
             //before allocation constrain
-            var constrains = new Constrains();
+            //var constrains = new Constrains();
             //person one can works 3..4 hours in any day
             bool c1()
             {

@@ -6,7 +6,8 @@ namespace AllocationConstraints
     {
         static void Main(string[] args)
         {
-            PrintTime(JobShop.JobShop.Execute);
+            //PrintTime(JobShop.JobShop.Execute);
+            PrintTime(Allocation.GenericSolution.FriendsEnemiesSolution.Execute);
         }
 
         public static void PrintTime(Action action)

@@ -5,7 +5,7 @@ namespace AllocatePersons
 {
     class Program
     {
-        public static void Main(string[] args)
+        public static void Main1(string[] args)
         {
             var persons = new[] { 1, 2, 3, 4 };
             var timeSlots = new int[9];
