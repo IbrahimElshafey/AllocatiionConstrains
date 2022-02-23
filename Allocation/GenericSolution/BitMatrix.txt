@@ -1,0 +1,76 @@
+﻿Intersection Group
+G1 1,2,3,4
+G2 2,5,6
+G3 1,7,8
+
+Bit Matrix
+If there is intersection between elements set index to zero
+	1	2	3	4	5	6	7	8
+1   0	0	0	0   1   1	0	0
+2   0	0	0	0   0   0	1	1
+3   0	0	0	0   1   1	1	1
+4   0	0	0	0   1   1	1	1
+5   1   0   1   1   0   0	1	1
+6   1   0   1   1   0   0	1	1
+7   0   1   1   1   1   1	0	0
+8   0   1   1   1   1   1	0	0
+	2	2	4	4	5	5	5	5
+
+From bit matrix we can find which element can be together	
+1 > 5,6
+2 > 7,8
+3 > 5,6,7,8
+4 > 5,6,7,8
+5 > 1,3,4,7,8
+6 > 1,3,4,7,8
+7 > 2,3,4,5,6
+8 > 2,3,4,5,6
+
+Select group with largest slots ,in this case G1
+*Allocate all it's element
+T1 	1
+T2	2
+T3 	3
+T4 	4
+Take next element with latest elements after
+From(5,6,7,8) all have five elements after
+
+Select 5
+Check if 5 can allocate in T1,T2,T3,T4 
+5 can allocate in T1  because elements after contains 1
+T1 	1,5
+T2	2
+T3 	3
+T4 	4
+
+Now select 6
+Check if 6 can allocate in T1,T2,T3,T4 
+6 can't allocted in T1 because elements after (1,3,4,7,8) not contains both 1 and 5
+6 can't allocted in T2 because elements after (1,3,4,7,8) not contains 2
+6 can be allocted in T3 because elements after (1,3,4,7,8)  contains 3
+T1 	1,5
+T2	2
+T3 	3,6
+T4 	4
+
+
+Now select 7
+Check if 7 can allocate in T1,T2,T3,T4 
+7 can't allocted in T1 because elements after (2,3,4,5,6) not contains both 1 and 5
+7 can be allocted in T2 because elements after (2,3,4,5,6) contains 2
+T1 	1,5
+T2	2,7
+T3 	3,6
+T4 	4
+
+
+Now select 8
+Check if 8 can allocate in T1,T2,T3,T4 
+8 can't allocted in T1 because elements after (2,3,4,5,6) not contains both 1 and 5
+8 can't allocted in T2 because elements after (2,3,4,5,6) not contains both 2 and 7
+8 can be allocted in T3 because elements after (2,3,4,5,6) contains (3,6)
+T1 	1,5
+T2	2,7
+T3 	3,6,8
+T4 	4
+
