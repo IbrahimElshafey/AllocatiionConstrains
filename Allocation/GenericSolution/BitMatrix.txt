@@ -3,7 +3,7 @@ G1 1,2,3,4
 G2 2,5,6
 G3 1,7,8
 
-Bit Matrix
+Bit Matrix (Friends & Enemies Matrix)
 If there is intersection between elements set index to zero
 	1	2	3	4	5	6	7	8
 1   0	0	0	0   1   1	0	0
@@ -14,30 +14,45 @@ If there is intersection between elements set index to zero
 6   1   0   1   1   0   0	1	1
 7   0   1   1   1   1   1	0	0
 8   0   1   1   1   1   1	0	0
-	2	2	4	4	5	5	5	5
 
-From bit matrix we can find which element can be together	
-1 > 5,6
-2 > 7,8
-3 > 5,6,7,8
-4 > 5,6,7,8
-5 > 1,3,4,7,8
-6 > 1,3,4,7,8
-7 > 2,3,4,5,6
-8 > 2,3,4,5,6
+From bit matrix we can find which element can be after each elemnt (a friend)
+And Wich can't be (an enemy)
+Zero for enemy and One for friend
+Let call friens group (FG)
+FG(1) > 5,6
+FG(2) > 7,8
+FG(3) > 5,6,7,8
+FG(4) > 5,6,7,8
+FG(5) > 1,3,4,7,8
+FG(6) > 1,3,4,7,8
+FG(7) > 2,3,4,5,6
+FG(8) > 2,3,4,5,6
+And enemies group (EG)
+EG(1) > 2,3,4,7,8
+EG(2) > 1,3,4,5,6
+EG(3) > 1,2,4
+EG(4) > 1,2,3
+EG(5) > 2,6
+EG(6) > 2,5
+EG(7) > 1,7
+EG(8) > 1,8
 
-Select group with largest slots ,in this case G1
+Activity can be placed in time slot if
+	slot contains friends 
+	or slot is empty
+
+Select group with largest count of activities ,in this case G1
 *Allocate all it's element
 T1 	1
 T2	2
 T3 	3
 T4 	4
-Take next element with latest elements after
+Take next next group with largest count G2 or
 From(5,6,7,8) all have five elements after
 
 Select 5
 Check if 5 can allocate in T1,T2,T3,T4 
-5 can allocate in T1  because elements after contains 1
+5 can allocate in T1  because elements after (1,3,4,7,8) contains 1
 T1 	1,5
 T2	2
 T3 	3
@@ -74,3 +89,80 @@ T2	2,7
 T3 	3,6,8
 T4 	4
 
+Count of solutions
+4!*4*2*3*2=1125
+=======
+Order Constrains
+Imagine if we adde order constrains like:
+4 must be before 1 and 7
+7 must be after 6
+3 must be after 6 
+
+the solution with no intersection was
+T1 	1,5
+T2	2,7
+T3 	3,6,8
+T4 	4
+
+Can we generate table now??!!
+Swap rows to match "4 must be done before 1 and 7"
+T4 	4
+T1 	1,5
+T2	2,7
+T3 	3,6,8
+Swap rows to match "7 must be done after 6"
+T4 	4
+T1 	1,5
+T3 	3,6,8
+T2	2,7
+For constrain "3 must be after 6 " we need to move 3 or 6
+FG(3) > 5,6,7,8
+FG(6) > 1,3,4,7,8
+3 can't be move to T2 because FG(3)
+6 can be moved to T4
+T4 	4,6
+T1 	1,5
+T3 	3,8
+T2	2,7
+Revaluate Constrains:
+4 must be before 1 and 7:true
+7 must be after 6:true
+3 must be after 6:true 
+
+Rename time labels
+T1 	4,6
+T2 	1,5
+T3 	3,8
+T4	2,7
+
+========
+# Can we efficiently save matrix for available times per activity while we allocate them (in the same loop).
+Yes, we alerday.
+If we save a list contains activites and it's allocated time slot (Allocation Place List) like:
+A	 P
+1	 T2
+2	 T4
+3	 T3
+4	 T1
+5	 T2
+6	 T1
+7	 T4
+8	 T3
+From the bit matrix (Friends & Enemies Matrix) we can find activity enemies and from the allocation place list
+we can find enimies locations.
+Where enimies exist activity can't be placed
+
+Now with solution 
+T1 	4,6
+T2 	1,5
+T3 	3,8
+T4	2,7
+And Enemies 
+EG(1) > 2,3,4,7,8
+EG(2) > 1,3,4,5,6
+EG(3) > 1,2,4
+EG(4) > 1,2,3
+EG(5) > 2,6
+EG(6) > 2,5
+EG(7) > 1,8
+EG(8) > 1,7
