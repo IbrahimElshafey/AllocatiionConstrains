@@ -39,14 +39,13 @@ namespace AllocationConstraints.GenericSolution
                 - Fill two time slot (time length)
             - Order Constrain
                 - Activity A2 must be after A1
-            - Time Preference Constrain
-                - Not available time slots per tag
-                - Priority 
-                        - Activities with the tag "Early=true" must fill slots 1-3
             - Distribution Constrains
                 - Activities with tag "Subject=Math,Group=Any" locate in the same time every day for the group
                 - Activities with tag "Teacher1" spread over two days only
                 - Activities with tag "Teacher1" must be separated by one hour at least
+                - Time Preference Constrain
+                    - Not available time slots per tag
+                    - Priority>>Activities with the tag "Early=true" must fill slots 1-3
             
          */
 

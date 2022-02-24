@@ -11,3 +11,5 @@ G1,G2 Conflicts = 2,2 = 4
 G1,G3 Conflicts = 1,3 = 4
 
 G2,G3 Conflicts = 1 = 1
+=======
+Distribution and Order Cosntrains will guide the selection of suitable slot
