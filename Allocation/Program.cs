@@ -9,6 +9,8 @@ namespace AllocationConstraints
             //PrintTime(JobShop.JobShop.Execute);
             //PrintTime(Allocation.GenericSolution.FriendsEnemiesSolution.Execute);
             PrintTime(Allocation.GenericSolution.FriendsEnemiesBits.Execute);
+
+            Console.Read();
         }
 
         public static void PrintTime(Action action)
