@@ -26,5 +26,9 @@ G3	0	0	1	0	1	1
 G4	1	1	0	1	0	0
 G5	1	1	1	0	1	0
 G6	1	1	1	0	0	1
+=========
+If intersection G1 is (A1,A2,A3,A4)
+and intersection G2 is (A1,A5,A6)
+assume length is 1
 
 
