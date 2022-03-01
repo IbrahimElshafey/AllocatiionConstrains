@@ -45,3 +45,18 @@ A1	A2	A3	A4
 		A7	A8
 A9	A10	A11
 
+===
+Places count = G1 ones = 3
+OR Groups ,Count Ones, Sum group ones, Count OR result ones, add dif
+	A1	A2	A3	A4	A5	A6	A7	A8	|	L
+G1	3	2	2	0	0	0	0	0	|	7
+G2	0	0	0	2	1	4	0	0	|	7
+G3	0	0	0	0	0	0	4	3	|	7
+G4	3	0	0	2	0	0	0	0	|	5
+G5	0	2	0	0	0	4	1	4	|	10
+G6	0	0	3	0	1	0	0	2	|	6
+
+
+
+
+
