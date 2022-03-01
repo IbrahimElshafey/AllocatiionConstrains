@@ -27,8 +27,21 @@ G4	1	1	0	1	0	0
 G5	1	1	1	0	1	0
 G6	1	1	1	0	0	1
 =========
-If intersection G1 is (A1,A2,A3,A4)
-and intersection G2 is (A1,A5,A6)
-assume length is 1
+if we have four intersection group
+G1 A1,A2,A3,A4
+G2 A1,A5,A6
+G3 A1,A5,A7,A8
+G4 A7,A9,A10,A11
 
+How Many time slots we need for no intersection allocation?
+G1 and G2 intersection is A1 = 1
+G3 and Gp intersection is A1,A5 = 2  //Gp = previous group 
+G4 and Gp intersection is A7 = 1 
+
+If intersection length exceed add more time, in this case we don't need.
+
+A1	A2	A3	A4
+	A5	A6
+		A7	A8
+A9	A10	A11
 
